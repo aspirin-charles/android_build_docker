@@ -18,7 +18,8 @@ RUN mkdir "$ANDROID_HOME" .android && \
 
 RUN yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
 RUN $ANDROID_HOME/tools/bin/sdkmanager --update
-RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
+RUN $ANDROID_HOME/tools/bin/sdkmanager \
+    "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
     "platforms;android-${ANDROID_VERSION}" \
     "platform-tools"
     # "ndk;$ANDROID_NDK_VERSION"
